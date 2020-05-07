@@ -1,19 +1,26 @@
-
-CREATE TABLE planeten (naam varchar(30) NOT NULL,
- diameter varchar(30) NOT NULL,
- afstand_tot_de_zon varchar(30) NOT NULL,
- massa varchar(30) NOT NULL,
+DROP TABLE planeten;
+CREATE TABLE planeten (
+ naam varchar(30) NOT NULL,
+ diameter BIGINT NOT NULL,
+ afstand_tot_de_zon BIGINT NOT NULL,
+ massa BIGINT NOT NULL,
  bezoek_datum varchar(30) NULL,
  id INT AUTO_INCREMENT PRIMARY KEY);
- 
-insert into planeten  (`naam` , `diameter` , `afstand_tot_de_zon`, `massa` , `bezoek_datum`,  `id`) values 
-('Zon' ,'1.392.000' ,'-' ,'332.946'), 
-('Mercurius' ,'4.880' ,'57.910.000' ,'0,1'),
-('Venus' ,'12.104' ,'108.208.930' ,'0,9'),
-('Maan' ,'3,474' ,'150.000.000' ,'0,01' , '20/07/1969'), 
-('Aarde' ,'12.756' ,'149.597.870' ,'1' , '1.8M jaar geleden'),
-('Mars' ,'6.794' ,'227.936.640' ,'0,1'),
-('Jupiter' ,'142.984' ,'778.412.010' ,'318'),
-('Saturnus' ,'120.536' ,'1.426.725.400' ,'95'),
-('Uranus' ,'51.118' ,'2.870.972.200' ,'15'),
-('Neptunus' ,'49.572' ,'4.498.252.900' ,'17'); 
+
+insert into planeten  (`naam` , `diameter` , `afstand_tot_de_zon`, `massa` , `bezoek_datum`) values 
+('Zon' ,1392000 ,0 , 332946, NULL), 
+('Mercurius' ,4880 ,57910000 ,01, NULL),
+('Venus' ,12104 ,108208930 ,09 , NULL),
+('Maan' ,3474 ,150000000 , 01 , '20/07/1969'), 
+('Aarde' ,12.756 ,149597870 ,1 , '1.8M jaar geleden'),
+('Mars' ,6794 ,227936640 ,01, NULL),
+('Mars' ,6794 ,227936640 ,01, NULL),
+('Jupiter' ,142984 ,778412010 ,318, NULL),
+('Saturnus' ,120536 ,1426725400 ,95, NULL),
+('Uranus' ,51118 ,2870972200 ,15, NULL),
+('Neptunus' ,49572 ,4498252900 ,17, NULL); 
+UPDATE planeten SET  `naam` = 'Teenalp' WHERE id=7;
+ Select * from planeten; 
+
+
+
